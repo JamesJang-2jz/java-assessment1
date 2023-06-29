@@ -26,7 +26,11 @@ public class IntegerUtils {
      */
     public static Integer reverseDigits(Integer val) {
         Integer result = 0;
-        
+        while (val != 0){
+            int digit = val % 10;
+            result = result * 10 + digit;
+            val /= 10;
+        }
         return result;
     }
 }
