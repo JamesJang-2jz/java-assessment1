@@ -1,35 +1,34 @@
 package com.zipcodewilmington.assessment1.part2;
 
-/**
- * Created by leon on 2/16/18.
- */
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class ArrayUtils {
-    /**
-     * @param objectArray   an array of any type of Object
-     * @param objectToCount any non-primitive value
-     * @return the number of times the specified `value` occurs in the specified `objectArray`
-     * Given an array of objects, named `objectArray`, and an object `objectToCount`, return the number of times the `objectToCount` appears in the `objectArray`
-     */
+
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
-        return null;
+        Integer count = 0;
+        for (Object o : objectArray) {
+            if (o == objectToCount){
+                count++;
+            }
+        }
+        return count;
     }
 
-    /**
-     * @param objectArray    an array of any type of Object
-     * @param objectToRemove a value to be removed from the `objectArray`
-     * @return an array with identical content excluding the specified `objectToRemove`
-     * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
-     */
-    public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        return null;
+    public static <T> T[] removeValue(T[] objectArray, T objectToRemove) {
+        List<T> list = new ArrayList<>();
+        for (T obj : objectArray) {
+            if (!obj.equals(objectToRemove)) {
+                list.add(obj);
+            }
+        }
+        return list.toArray((T[]) Array.newInstance(objectArray.getClass().getComponentType(), list.size()));
     }
 
-    /**
-     * @param objectArray an array of any type of Object
-     * @return the most frequently occurring object in the array
-     * given an array of objects, named `objectArray` return the most frequently occuring object in the array
-     */
     public static Object getMostCommon(Object[] objectArray) {
+        Object obj;
+        
         return null;
     }
 
