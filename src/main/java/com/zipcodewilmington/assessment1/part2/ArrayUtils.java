@@ -53,7 +53,21 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        Map<Object, Integer> map = new HashMap<>();
+        for (Object e : objectArray) {
+            map.put(e, map.getOrDefault(e, 0) + 1);
+        }
+        Object result = null;
+        int min = Integer.MAX_VALUE;
+        for (Map.Entry<Object, Integer> entry: map.entrySet()) {
+            Object obj = entry.getKey();
+            int count = entry.getValue();
+            if (count < min) {
+                result = obj;
+                min = count;
+            }
+        }
+        return result;
     }
 
     /**
