@@ -30,7 +30,20 @@ public class ArrayUtils {
 
     public static Object getMostCommon(Object[] objectArray) {
         Map<Object, Integer> map = new HashMap<>();
-        return null;
+        for (Object e : objectArray) {
+            map.put(e, map.getOrDefault(e, 0) + 1);
+        }
+        Object result = null;
+        int max = 0;
+        for (Map.Entry<Object, Integer> entry: map.entrySet()) {
+            Object obj = entry.getKey();
+            int count = entry.getValue();
+            if (count > max) {
+                result = obj;
+                max = count;
+            }
+        }
+        return result;
     }
 
 
