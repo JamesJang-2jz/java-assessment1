@@ -2,7 +2,9 @@ package com.zipcodewilmington.assessment1.part2;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ArrayUtils {
 
@@ -27,8 +29,7 @@ public class ArrayUtils {
     }
 
     public static Object getMostCommon(Object[] objectArray) {
-        Object obj;
-        
+        Map<Object, Integer> map = new HashMap<>();
         return null;
     }
 
