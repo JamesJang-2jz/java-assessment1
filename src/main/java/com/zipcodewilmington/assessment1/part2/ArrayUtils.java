@@ -2,7 +2,9 @@ package com.zipcodewilmington.assessment1.part2;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ArrayUtils {
 
@@ -27,11 +29,22 @@ public class ArrayUtils {
     }
 
     public static Object getMostCommon(Object[] objectArray) {
-        Object obj;
-
-        return null;
+        Map<Object, Integer> map = new HashMap<>();
+        for (Object e : objectArray) {
+            map.put(e, map.getOrDefault(e, 0) + 1);
+        }
+        Object result = null;
+        int max = 0;
+        for (Map.Entry<Object, Integer> entry: map.entrySet()) {
+            Object obj = entry.getKey();
+            int count = entry.getValue();
+            if (count > max) {
+                result = obj;
+                max = count;
+            }
+        }
+        return result;
     }
-
 
     /**
      * @param objectArray an array of any type of Object
@@ -39,7 +52,21 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        Map<Object, Integer> map = new HashMap<>();
+        for (Object e : objectArray) {
+            map.put(e, map.getOrDefault(e, 0) + 1);
+        }
+        Object result = null;
+        int min = Integer.MAX_VALUE;
+        for (Map.Entry<Object, Integer> entry: map.entrySet()) {
+            Object obj = entry.getKey();
+            int count = entry.getValue();
+            if (count < min) {
+                result = obj;
+                min = count;
+            }
+        }
+        return result;
     }
 
     /**
