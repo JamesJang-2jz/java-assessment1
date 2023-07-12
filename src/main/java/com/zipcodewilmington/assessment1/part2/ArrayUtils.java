@@ -28,7 +28,7 @@ public class ArrayUtils {
 
     public static Object getMostCommon(Object[] objectArray) {
         Object obj;
-        
+
         return null;
     }
 
