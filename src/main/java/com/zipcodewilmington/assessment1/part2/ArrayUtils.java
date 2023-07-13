@@ -2,10 +2,7 @@ package com.zipcodewilmington.assessment1.part2;
 
 import java.lang.reflect.Array;
 import java.util.*;
-<<<<<<< HEAD
 import java.util.stream.Collectors;
-=======
->>>>>>> 92955432739a800ef53677b255e67560ede83785
 import java.util.stream.Stream;
 
 public class ArrayUtils {
