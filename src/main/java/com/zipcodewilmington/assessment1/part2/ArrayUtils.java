@@ -2,7 +2,10 @@ package com.zipcodewilmington.assessment1.part2;
 
 import java.lang.reflect.Array;
 import java.util.*;
+<<<<<<< HEAD
 import java.util.stream.Collectors;
+=======
+>>>>>>> 92955432739a800ef53677b255e67560ede83785
 import java.util.stream.Stream;
 
 public class ArrayUtils {
@@ -45,7 +48,6 @@ public class ArrayUtils {
         return result;
     }
 
-
     /**
      * @param objectArray an array of any type of Object
      * @return the least frequently occurring object in the array
@@ -75,7 +77,11 @@ public class ArrayUtils {
      * @return an array containing all elements in `objectArray` and `objectArrayToAdd`
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
-    public static <T> Object[] mergeArrays(T[] objectArray, T[] objectArrayToAdd) {
-         return null;
+
+    public static <T> T[] mergeArrays(T[] objectArray, T[] objectArrayToAdd) {
+        return Stream.of(objectArray,objectArrayToAdd)
+                .flatMap(Stream::of)
+                .toArray(size -> (T[]) Array.newInstance(objectArray.getClass().getComponentType(), size));
+
     }
 }
