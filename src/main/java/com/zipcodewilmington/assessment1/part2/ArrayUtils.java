@@ -79,8 +79,14 @@ public class ArrayUtils {
      */
 
     public static <T> T[] mergeArrays(T[] objectArray, T[] objectArrayToAdd) {
-        return Stream.of(objectArray,objectArrayToAdd)
-                .flatMap(Stream::of)
-                .toArray(size -> (T[]) Array.newInstance(objectArray.getClass().getComponentType(), size));
+        Object[] a = objectArray;
+        Object[] b = objectArrayToAdd;
+        T[] n = (T[]) Array.newInstance(a.getClass().getComponentType(), a.length + b.length);
+        System.arraycopy(a, 0, n, 0, a.length);
+        System.arraycopy(b, 0, n, a.length, b.length);
+        return n;
+//        return Stream.of(objectArray,objectArrayToAdd)
+//                .flatMap(Stream::of)
+//                .toArray(size -> (T[]) Array.newInstance(objectArray.getClass().getComponentType(), size));
     }
 }
