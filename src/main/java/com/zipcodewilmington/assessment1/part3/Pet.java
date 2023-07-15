@@ -14,6 +14,7 @@ public abstract class Pet implements Animal {
     public Pet() {
         name = "";
         age = 0;
+        owner = null;
     }
 
     /**
@@ -59,9 +60,8 @@ public abstract class Pet implements Animal {
      * ensure this instance of `Pet` is added to the owner's composite `pets` list
      */
     public void setOwner(PetOwner newPetOwner) {
-        if (newPetOwner != null){
-            owner = newPetOwner;
-        }
+        this.owner = newPetOwner;
+        newPetOwner.addPet(this);
     }
 
     /**
