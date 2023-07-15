@@ -36,7 +36,9 @@ public class StringUtils {
      * return the first word with identical contents in reverse order
      */
     public static String reverseFirstWord(String sentence) {
-        return null;
+        StringBuilder sb = new StringBuilder(sentence.substring(0, sentence.indexOf(" ")));
+        sb.reverse();
+        return sb.toString();
     }
 
     /**
