@@ -51,7 +51,6 @@ public class StringUtils {
     public static String reverseFirstWordThenCamelCase(String sentence) {
         String str1 = reverseFirstWord(sentence);
         StringBuilder sb = new StringBuilder();
-//        Character.toUpperCase(str1.charAt(0));
         sb.append(Character.toUpperCase(str1.charAt(0)));
         sb.append(str1.substring(1));
         return sb.toString();
@@ -66,7 +65,9 @@ public class StringUtils {
      * specified index
      */
     public static String removeCharacterAtIndex(String str, int index) {
-        return null;
+        StringBuilder sb = new StringBuilder(str);
+        sb.deleteCharAt(index);
+        return sb.toString();
     }
 
 }
