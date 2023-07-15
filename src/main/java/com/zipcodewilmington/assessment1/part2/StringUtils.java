@@ -49,7 +49,12 @@ public class StringUtils {
      * order with the first character capitalized
      */
     public static String reverseFirstWordThenCamelCase(String sentence) {
-        return null;
+        String str1 = reverseFirstWord(sentence);
+        StringBuilder sb = new StringBuilder();
+//        Character.toUpperCase(str1.charAt(0));
+        sb.append(Character.toUpperCase(str1.charAt(0)));
+        sb.append(str1.substring(1));
+        return sb.toString();
     }
 
 
