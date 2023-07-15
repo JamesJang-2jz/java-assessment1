@@ -16,7 +16,6 @@ public class StringUtils {
         return result;
     }
 
-
     /**
      * @param sentence a string containing words delimited by spaces, representative of a sentence
      * @return the first word in the specified sentence
@@ -24,7 +23,10 @@ public class StringUtils {
      * return the first word of the sentence
      */
     public static String getFirstWord(String sentence) {
-        return null;
+//        return sentence.split(" ")[0];
+        int firstSpace = sentence.indexOf(" ");
+        String first = sentence.substring(0,firstSpace);
+        return first;
     }
 
     /**
