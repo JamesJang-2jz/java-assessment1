@@ -38,7 +38,10 @@ public class PetOwner {
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
-
+        petList.remove(pet);
+        if (petList.size() == 0){
+            petList.add(null);
+        }
     }
 
     /**
@@ -46,7 +49,7 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
-        return null;
+        return this == pet.owner;
     }
 
     /**
