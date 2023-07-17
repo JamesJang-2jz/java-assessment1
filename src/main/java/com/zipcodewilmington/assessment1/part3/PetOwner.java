@@ -30,7 +30,8 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-
+        petList.add(pet);
+        pet.owner = this;
     }
 
     /**
@@ -77,20 +78,20 @@ public class PetOwner {
      * @return the number of Pet objects stored in this class
      */
     public Integer getNumberOfPets() {
-        return null;
+        return petList.size();
     }
 
     /**
      * @return the name property of the Pet
      */
     public String getName() {
-        return null;
+        return name;
     }
 
     /**
      * @return array representation of animals owned by this PetOwner
      */
     public Pet[] getPets() {
-        return null;
+        return petList.toArray(new Pet[0]);
     }
 }
