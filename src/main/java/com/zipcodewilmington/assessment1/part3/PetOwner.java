@@ -65,14 +65,17 @@ public class PetOwner {
         return youngest;
     }
 
-
-
-
     /**
      * @return the age of the Pet object whose age field is the highest amongst all Pets in this class
      */
     public Integer getOldestPetAge() {
-        return null;
+        Integer oldest = 0;
+        for (Pet p : petList) {
+            if (p.getAge() > oldest){
+                oldest = p.getAge();
+            }
+        }
+        return oldest;
     }
 
 
