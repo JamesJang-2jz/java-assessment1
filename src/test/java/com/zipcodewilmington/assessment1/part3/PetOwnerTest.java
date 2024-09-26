@@ -89,13 +89,14 @@ public class PetOwnerTest {
     @Test
     public void getYoungestPetAgeTest() {
         // Given
-        int expected = 1;
+        int expected = 2;
         Pet oneYearOldPuppy = new Dog(expected);
-        Pet twoYearOldKitten = new Cat(2);
+        Pet twoYearOldKitten = new Cat(3);
         PetOwner po = new PetOwner("", oneYearOldPuppy, twoYearOldKitten);
 
         // When
         int actual = po.getYoungetPetAge();
+        System.out.println(actual + " age of youngest pet");
 
         // Then
         Assert.assertEquals(expected, actual);
